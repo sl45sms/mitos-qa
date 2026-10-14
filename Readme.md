@@ -27,8 +27,25 @@ VLLM_DTYPE=float32 VLLM_MAX_LEN=32768 VLLM_CPU_KVCACHE_SPACE=16 sbatch run_vllm_
 
 
 
+# generate QA pairs
+first enable the python enviroment:
+```
+cd $HOME/MITOS-QA/VLLM
+source ./vllm_cpu_env/bin/activate
+```
+start the bulk QA script above to initialize vllm
+and then run the generate_qa.py script:
+```bash
+python generate_qa.py \
+    --input merged_unfiltered_dataset.jsonl \
+    --output data/synthetic_qa.jsonl \
+    --node m42 --concurrency 192 --samples 5 --max-tokens 1024
+```
+
+
 
 # tools
 setup_glibc_sysroot.sh	Recreate ~/toolchain sysroot 
 diag_compute_node.sh	diagnostic for compute nodes ("torch.compile OK")
 smoke_test_serve.sh	End-to-end smoke test of the server
+forward_port.sh	Forward a port from the compute node to the login node
