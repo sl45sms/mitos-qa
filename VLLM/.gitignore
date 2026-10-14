@@ -1,2 +1,7 @@
 vllm
 vllm_cpu_env
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.pdb
