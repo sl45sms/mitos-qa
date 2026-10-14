@@ -21,7 +21,7 @@ Run from the login node with the venv that contains aiohttp:
     VLLM/vllm_cpu_env/bin/python generate_qa.py \
         --input  data/merged_unfiltered_dataset.jsonl \
         --output data/synthetic_qa.jsonl \
-        --node m42 --concurrency 192 --samples 5 --max-tokens 1024
+        --node m42 --concurrency 64 --samples 5 --max-tokens 1024
 """
 
 from __future__ import annotations
@@ -747,8 +747,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     g.add_argument(
         "--concurrency",
         type=int,
-        default=192,
-        help="in-flight requests: 128–256 on a TP=8 server, 32–128 on a single-rank server",
+        default=64,
+        help="in-flight requests: 64-128 on a TP=8 server, 32–128 on a single-rank server",
     )
     g.add_argument("--max-attempts", type=int, default=3, help="attempts per HTTP request (incl. first)")
     g.add_argument("--retry-base", type=float, default=3.0, help="base seconds for exponential backoff")
