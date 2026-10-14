@@ -16,11 +16,11 @@ source ./vllm_cpu_env/bin/activate
 
 ## Run  
 ### Interactive - fastest single-stream:
-VLLM_TP=8 sbatch --cpus-per-task=128 --mem=160G run_vllm_cpu.sh
+VLLM_TP=8 sbatch --cpus-per-task=128 --mem=160G --time=4:00:00 run_vllm_cpu.sh
 
 ### Bulk QA - max throughput: (128 to 256 parallel requests)
 VLLM_TP=8 VLLM_DTYPE=float32 VLLM_MAX_LEN=16384 VLLM_CPU_KVCACHE_SPACE=8 \
-    sbatch --cpus-per-task=128 --mem=160G run_vllm_cpu.sh
+    sbatch --cpus-per-task=128 --mem=160G --time=24:00:00run_vllm_cpu.sh
 
 ### Bulk QA - resource-conscious (only ~20-32 cores)
 VLLM_DTYPE=float32 VLLM_MAX_LEN=32768 VLLM_CPU_KVCACHE_SPACE=16 sbatch run_vllm_cpu.sh
