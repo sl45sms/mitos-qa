@@ -39,7 +39,7 @@ and then run the generate_qa.py script:
 python generate_qa.py \
     --input data/merged_unfiltered_dataset.jsonl \
     --output data/mitos_qa.jsonl \
-    --concurrency 192 --samples 5 --max-tokens 1024
+    --concurrency 64 --samples 5 --max-tokens 1024
 ```
 
 
