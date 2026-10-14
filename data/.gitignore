@@ -1,0 +1,4 @@
+*.jsonl
+*.json
+*.csv
+*.tsv
