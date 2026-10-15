@@ -12,7 +12,7 @@ Look at [ARCHITECTURE.md](ARCHITECTURE.md) for details on the system architectur
 
 ## Preparation
 Always use the CPU environment for running Llama-Krikri on ARIS Greek HPC.
-```
+```bash
 cd $HOME/MITOS-QA/VLLM
 source ./vllm_cpu_env/bin/activate
 ```
