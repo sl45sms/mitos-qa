@@ -8,6 +8,8 @@ Single-stream CPU decoding is slow (a few tokens per second), but bulk generatio
 Processing around 5000 documents on CPU nodes will therefore take considerable time. (~18 hours)
 Please be patient while the processing is ongoing.
 
+Look at [ARCHITECTURE.md](ARCHITECTURE.md) for details on the system architecture and generation flow.
+
 ## Preparation
 Always use the CPU environment for running Llama-Krikri on ARIS Greek HPC.
 ```
