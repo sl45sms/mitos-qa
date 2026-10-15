@@ -2,7 +2,7 @@
 This repository generates a question-answering pairs dataset based on the MITOS dataset and the Greek Code of Municipalities and Communities.
 
 The dataset is intended for later use on argilla.glossapi.gr.
-The script is designed to run on the ARIS Greek HPC on THIN (CPU) nodes, generating the QA pairs with the Greek LLM Llama-Krikri-8B-Instruct (ILSP) served by vLLM.
+The script is designed to run on the [ARIS Greek HPC](https://www.hpc.grnet.gr) on THIN (CPU) nodes, generating the QA pairs with the Greek LLM Llama-Krikri-8B-Instruct (ILSP) served by vLLM.
 Single-stream CPU decoding is slow (a few tokens per second), but bulk generation (fp32, 128–256 parallel requests) sustains ~35–49 tokens/s on a single-rank server and up to ~128 tokens/s on a full node — see [ARCHITECTURE.md](ARCHITECTURE.md) §6.
 
 Processing around 5000 documents on CPU nodes will therefore take considerable time. (~18 hours)
